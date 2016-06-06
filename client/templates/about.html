@@ -1,0 +1,47 @@
+<template name="about">
+<div id="out"><h1>Problem Description:</h1>
+<p><a href="https://github.com/marquinhe/tax">Java verion </a> for Java lovers</p>
+<p>When I input the employee's details: first name, last name, annual salary(positive integer) and super rate(0% - 50% inclusive), payment start date, the program should generate payslip information with name, pay period,  gross income, income tax, net income and super.</p>
+<p>The calculation details will be the following:
+•       pay period = per calendar month
+•       gross income = annual salary / 12 months
+•       income tax = based on the tax table provide below
+•       net income = gross income - income tax
+•       super = gross income x super rate</p>
+<p>Notes: All calculation results should be rounded to the whole dollar. If &gt;= 50 cents round up to the next dollar increment, otherwise round down.</p>
+<p>The following rates for 2012-13 apply from 1 July 2012.</p>
+<p>Taxable income   Tax on this income
+0 - $18,200     Nil
+$18,201 - $37,000       19c for each $1 over $18,200
+$37,001 - $80,000       $3,572 plus 32.5c for each $1 over $37,000
+$80,001 - $180,000      $17,547 plus 37c for each $1 over $80,000
+$180,001 and over       $54,547 plus 45c for each $1 over $180,000</p>
+<p>Example Data
+Employee annual salary is 60,050, super rate is 9%, how much will this employee be paid for the month of March ?
+•       pay period = Month of March (01 March to 31 March)
+•       gross income = 60,050 / 12 = 5,004.16666667 (round down) = 5,004
+•       income tax = (3,572 + (60,050 - 37,000) x 0.325) / 12  = 921.9375 (round up) = 922
+•       net income = 5,004 - 922 = 4,082
+•       super = 5,004 x 9% = 450.36 (round down) = 450</p>
+<h2>Solution</h2>
+<p>Hackathon approach.
+Build fast, realible web / hibrid apps in a couple of hours. The implememtatiom uses Meteor JS and uses Differential boilerplate as starting point for giving a richer U/X Experince.</p>
+<ul>
+<li>Load a CSV file</li>
+<li>Whilst parsing - calculate payslip</li>
+<li>Store it to Mongo</li>
+<li>Display results!</li>
+</ul>
+<h2>Build</h2>
+<p>Install meteor with: curl <a href="https://install.meteor.com/">https://install.meteor.com/</a> | sh</p>
+<p>git clone <a href="https://github.com/marquinhe/tax-meteor">https://github.com/marquinhe/tax-meteor</a></p>
+<p>rm -rf .git</p>
+<p>meteor</p>
+<h2>Stuff used to make this:</h2>
+<ul>
+<li><a href="https://install.meteor.com/">meteor</a> Meteor framework &gt; node js, mongo, blaze, ironLrouter ....</li>
+<li><a href="https://github.com/Differential/meteor-boilerplate">Differential Boilerplate</a> for the awesome UX</li>
+<li><a href="https://github.com/mholt/PapaParse">PapaPArse</a> CSV Parser</li>
+</ul>
+</div>
+</template>
