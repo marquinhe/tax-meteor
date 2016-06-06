@@ -9,5 +9,9 @@ Meteor.methods({
 		//console.log(row);
 		Payslip.insert( row );
 	}
-  }
+  },
+  'remove': function () {
+	  console.log("remove");
+    Payslip.remove({});
+  },
 });

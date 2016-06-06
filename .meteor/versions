@@ -42,6 +42,7 @@ iron:router@1.0.9
 iron:url@1.0.9
 jquery@1.11.3_2
 json@1.0.3
+juliancwirko:s-alert@3.1.0
 lai:collection-extensions@0.1.4
 launch-screen@1.0.2
 less@1.0.14
@@ -76,7 +77,6 @@ spacebars@1.0.6
 spacebars-compiler@1.0.6
 srp@1.0.3
 templating@1.1.1
-themeteorchef:bert@1.1.0
 tracker@1.0.7
 ui@1.0.6
 underscore@1.0.3

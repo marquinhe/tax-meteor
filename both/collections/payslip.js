@@ -4,23 +4,29 @@ Payslip.before.insert(function (userId, doc) {
   doc.createdAt = moment().toDate();
   doc.name = doc["0"]+ " " +doc["1"]; 
   doc.period = doc["4"];
-  console.log("Gross income> " + grossIncome(doc["2"]));
+  //console.log("Gross income> " + grossIncome(doc["2"]));
   doc.gross = grossIncome(doc["2"]);
   
-  console.log("Gross income> " + incomeTax(doc["2"]));
+  //console.log("Gross income> " + incomeTax(doc["2"]));
   doc.incomeTax = incomeTax(doc["2"]);
   
-  console.log("Net Income> " + incomeTax(doc["2"]));
+  //console.log("Net Income> " + incomeTax(doc["2"]));
   doc.net = netIncome(doc["2"]);
   
-  console.log("Super > " + getSuper(doc["2"],doc["3"] ));
+  //console.log("Super > " + getSuper(doc["2"],doc["3"] ));
   doc.super = getSuper(doc["2"],doc["3"] );
+  
+  doc.annual = doc["2"];
   
 });
 
 /**
 Taxable income Tax on this income 
-0 - $18,200 Nil $18,201 - $37,000 19c for each $1 over $18,200 $37,001 - $80,000 $3,572 plus 32.5c for each $1 over $37,000 $80,001 - $180,000 $17,547 plus 37c for each $1 over $80,000 $180,001 and over $54,547 plus 45c for each $1 over $180,000
+0 - $18,200 Nil 
+$18,201 - $37,000 19c for each $1 over $18,200 
+$37,001 - $80,000 $3,572 plus 32.5c for each $1 over $37,000 $
+80,001 - $180,000 $17,547 plus 37c for each $1 over $80,000 $180,001 and 
+over $54,547 plus 45c for each $1 over $180,000
 
 Example Data Employee annual salary is 
 60,050, super rate is 9%, how much will this employee be paid for the month of March ? • 
@@ -39,6 +45,7 @@ function grossIncome(salary){
 
 function incomeTax(salary){
 	var tier = getTier(salary);
+	console.log("tier>" + tier.base);
 	return  Math.ceil((tier.base + (salary - tier.lowerLimit) * tier.tax) / 12);
 }
 

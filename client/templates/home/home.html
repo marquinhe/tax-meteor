@@ -1,11 +1,14 @@
 <template name="home">
   <div class="template-home">
     <div class="page-header">
+		
+		 {{> sAlert}}
+		
 		{{#if noData}}
       <h4 class="view">Upload CSV File </h4>
   	{{else}}	
 	
-  		<button class="btn btn-primary">Try Again</button>
+  		<button class="btn btn-primary again"><i class="fa fa-cloud-upload"></i> Try Again</button>
 	
   	{{/if}}
     </div>

@@ -5,22 +5,26 @@ var optionsObject = {
         title: 'Name',
 		 data: 'name'
     }, {
-        title: 'Gross Monthly Income',
-		data: 'monthly-salary',
+        title: 'Gross Annual',
+		data: 'annual',
+		
+    }, {
+        title: 'Gross Income',
+		data: 'gross',
 		
     }, {
 	    title: 'Income Tax',
-		data: 'super-rate',
+		data: 'incomeTax',
 		
 	}, {
 	    title: 'Net Income',
-		data: 'super-rate',
+		data: 'net',
 	}, {
 		title: 'Super',
-		data: 'super-rate',
+		data: 'super',
 		}, {
 	    title: 'Period',
-	    data: 'super-rate',
+	    data: 'period',
 	}
 ]
 };
@@ -59,14 +63,18 @@ Template.home.events({
     template.uploading.set( true );
 
     Papa.parse( event.target.files[0], {
-      header: true,
+      header: false,
+	  meta: {
+		  fields: ["Column 1", "Column 2", "Column 3", "Column 4", "Column 5"]
+	  },	
       complete: function( results, file ) {
   		Meteor.call('parseUpload', results.data, function (error, response) {
                if ( error ) {
                  console.log( error.reason );
+				  sAlert.error('Error:' + error.message);
                } else {
                  template.uploading.set( false );
-                 Bert.alert( 'Upload complete!', 'success', 'growl-top-right' );
+				 sAlert.success('Upload complete!');
                }
   		    });
       }
@@ -77,5 +85,8 @@ Template.home.events({
   
   'click .login': function() {
     Meteor.loginWithTwitter();
+  }, 
+  'click .again': function(){
+	  Meteor.call('remove');
   }
 });
