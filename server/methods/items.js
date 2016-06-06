@@ -5,8 +5,9 @@ Meteor.methods({
   'parseUpload': function (data) {
 	    check( data, Array );
     for ( i = 0; i < data.length; i++ ) {
-		 item   = data[ i ]; 
-		console.log(item);
+		 row   = data[ i ]; 
+		//console.log(row);
+		Payslip.insert( row );
 	}
   }
 });

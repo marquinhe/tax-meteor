@@ -1,6 +1,6 @@
 # Problem Description:
 
-[Java verion ](https://github.com/marquinhe/tax) for Java lovers
+[Java version ](https://github.com/marquinhe/tax) for Java lovers
 
 When I input the employee's details: first name, last name, annual salary(positive integer) and super rate(0% - 50% inclusive), payment start date, the program should generate payslip information with name, pay period,  gross income, income tax, net income and super.
 

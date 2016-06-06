@@ -18,13 +18,16 @@ coffeescript@1.0.6
 cunneen:mailgun@0.9.1
 dburles:collection-helpers@1.0.3
 dburles:factory@0.3.10
+dburles:mongo-collection-instances@0.3.4
 ddp@1.1.0
 deps@1.0.7
 ejson@1.0.6
 email@1.0.6
+ephemer:reactive-datatables@1.1.0
 fastclick@1.0.3
 geojson-utils@1.0.3
 handlebars@1.0.3
+harrison:papa-parse@1.1.1
 html-tools@1.0.4
 htmljs@1.0.4
 http@1.1.0
@@ -39,6 +42,7 @@ iron:router@1.0.9
 iron:url@1.0.9
 jquery@1.11.3_2
 json@1.0.3
+lai:collection-extensions@0.1.4
 launch-screen@1.0.2
 less@1.0.14
 livedata@1.0.13
@@ -47,11 +51,13 @@ logging@1.0.7
 matb33:collection-hooks@0.8.0
 meteor@1.1.6
 meteor-platform@1.2.2
+meteortoys:toykit@1.0.4
 minifiers@1.1.5
 minimongo@1.0.8
 mobile-status-bar@1.0.3
 momentjs:moment@2.10.6
 mongo@1.1.0
+msavin:mongol@1.2.0
 npm-bcrypt@0.7.8_2
 observe-sequence@1.0.6
 ordered-dict@1.0.3
@@ -70,6 +76,7 @@ spacebars@1.0.6
 spacebars-compiler@1.0.6
 srp@1.0.3
 templating@1.1.1
+themeteorchef:bert@1.1.0
 tracker@1.0.7
 ui@1.0.6
 underscore@1.0.3
